@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {client} from '../supabase/client' 
+import {supabase} from '../supabase/client' 
 
 function Login() {
   const [email, setEmail] = useState("")
@@ -7,7 +7,7 @@ function Login() {
     e.preventDefault()
     
     try {
-      await client.auth.signInWithOtp({
+      await supabase.auth.signInWithOtp({
         email,
         
       })
